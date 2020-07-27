@@ -1,0 +1,13 @@
+﻿<Window x:Class="GenericSaaS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GenericSaaS"
+        mc:Ignorable="d"
+        Title="Generic SAAS" Height="664" Width="332" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+	<Grid>
+		<Button Name="btnCreateJsonFile" Content="Create json" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="204" Click="btnCreateJsonFile_Click" Height="50"/>
+
+	</Grid>
+</Window>
