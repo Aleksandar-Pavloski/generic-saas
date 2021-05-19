@@ -44,7 +44,7 @@ namespace GenericSaaS.Models
         /// </summary>
         public DateTime Registration { get; set; }
 
-        public User(string email)
+        public User(string email, int lastActivity)
         {
             var name = email.Split('@')[0];
 
@@ -54,7 +54,7 @@ namespace GenericSaaS.Models
             Name = name;
             Status = "Active";
             FirstActivity = DateTime.Now.AddYears(-3);
-            LastActivity = DateTime.Now;
+            LastActivity = DateTime.Now.AddDays((-1) * lastActivity);
             Registration = FirstActivity;
         }
     }

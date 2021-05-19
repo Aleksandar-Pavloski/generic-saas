@@ -17,6 +17,8 @@
 		<TextBox Name="txtFolder" HorizontalAlignment="Left" Margin="242,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="261"/>
 		<Button Name="btnOpen" Content="Open" HorizontalAlignment="Left" Margin="521,186,0,0" VerticalAlignment="Top" Width="66" Click="btnOpen_Click" TabIndex="3"/>
 		<Button Name="btnCreate" Content="Create" HorizontalAlignment="Left" Margin="426,342,0,0" VerticalAlignment="Top" Width="161" TabIndex="4" Click="btnCreate_Click"/>
+		<Label Content="Last activity" HorizontalAlignment="Left" Margin="44,95,0,0" VerticalAlignment="Top" Width="198"/>
+		<TextBox x:Name="txtLastActivity" HorizontalAlignment="Left" Margin="242,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" InputScope="NumberFullWidth" TabIndex="1" Text="1"/>
 
 	</Grid>
 </Window>

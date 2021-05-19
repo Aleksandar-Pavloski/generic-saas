@@ -33,7 +33,8 @@ namespace GenericSaaS
 			if (string.IsNullOrEmpty(txtFileName.Text)
 				|| string.IsNullOrEmpty(txtFolder.Text)
 				|| string.IsNullOrEmpty(txtNumberOfSubscriptions.Text)
-				|| string.IsNullOrEmpty(txtNumberOfUsers.Text))
+				|| string.IsNullOrEmpty(txtNumberOfUsers.Text)
+				|| string.IsNullOrEmpty(txtLastActivity.Text))
 			{
 				MessageBox.Show("All fields are required!", "Warning");
 				IsFormEnabled(true);
@@ -41,12 +42,14 @@ namespace GenericSaaS
 			}
 
 			if (!int.TryParse(txtNumberOfSubscriptions.Text, out int x)
-				|| !int.TryParse(txtNumberOfUsers.Text, out int y))
+				|| !int.TryParse(txtNumberOfUsers.Text, out int y)
+				|| !int.TryParse(txtLastActivity.Text, out int z))
 			{
-				MessageBox.Show("Subscriptions and Users must be numbers!", "Warning");
+				MessageBox.Show("Subscriptions, Users and LastActivity must be numbers!", "Warning");
 				IsFormEnabled(true);
 				return;
 			}
+
 
 			CreateFile();
 
@@ -66,7 +69,7 @@ namespace GenericSaaS
 			{
 				foreach (var user in subscription.UserIds)
 				{
-					genericSaasJson.Users.Add(new User(user));
+					genericSaasJson.Users.Add(new User(user, int.Parse(txtLastActivity.Text)));
 				}
 			}
 
@@ -96,6 +99,7 @@ namespace GenericSaaS
 				txtFolder.Text = string.Empty;
 				txtNumberOfSubscriptions.Text = string.Empty;
 				txtNumberOfUsers.Text = string.Empty;
+				txtLastActivity.Text = "1";
 			}
 		}
 	}
